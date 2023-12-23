@@ -1,5 +1,5 @@
 // out fit font
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
 // Mirande
 @font-face {
   font-family: "mirande";
@@ -32,7 +32,7 @@
   box-sizing: border-box;
   line-height: 36px;
   scroll-behavior: smooth;
-  font-family: 'Outfit', sans-serif;
+  font-family: "Outfit", sans-serif;
   -webkit-tap-highlight-color: transparent;
 }
 body {
@@ -62,7 +62,7 @@ $main: #005a64;
 $border: #dddddd;
 $text: #637381;
 $white: #fff;
-$transation: .4s ease-in-out;
+$transation: 0.4s ease-in-out;
 
 .auth_section {
   width: 100%;
@@ -74,7 +74,7 @@ $transation: .4s ease-in-out;
     position: relative;
     &::after {
       position: absolute;
-      content: '';
+      content: "";
       top: 0;
       left: 0;
       width: 100%;
@@ -172,7 +172,7 @@ $transation: .4s ease-in-out;
               &::after {
                 min-width: 18px;
                 height: 18px;
-                content: '';
+                content: "";
                 border-radius: 50%;
                 border: 1px solid $border;
                 position: absolute;
@@ -188,7 +188,7 @@ $transation: .4s ease-in-out;
                 padding-top: 2px;
               }
               &:checked:after {
-                content: '\f00c';
+                content: "\f00c";
                 background: $main;
                 color: #fff;
                 border: 0;

@@ -58,16 +58,20 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(to top, rgba(0, 105, 128, 0.4666666667), rgba(128, 180, 191, 0.4588235294));
+  background-image: linear-gradient(
+    to top,
+    rgba(0, 105, 128, 0.4666666667),
+    rgba(128, 180, 191, 0.4588235294)
+  );
   z-index: 1;
 }
 .auth_section .videoWrappper video {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   -o-object-position: center;
-     object-position: center;
+  object-position: center;
 }
 .auth_section .videoWrappper .logo {
   position: absolute;
@@ -159,8 +163,8 @@ a {
   width: 16px;
   height: 16px;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   position: relative;
   border: none;
 }
@@ -182,7 +186,13 @@ a {
   justify-content: center;
   padding-top: 2px;
 }
-.auth_section .auth-form form .form_group .input_field .check input:checked:after {
+.auth_section
+  .auth-form
+  form
+  .form_group
+  .input_field
+  .check
+  input:checked:after {
   content: "\f00c";
   background: #005a64;
   color: #fff;
@@ -222,4 +232,4 @@ a {
 }
 .otp-container .otp-input::-webkit-inner-spin-button {
   display: none;
-}/*# sourceMappingURL=index.css.map */
+} /*# sourceMappingURL=index.css.map */

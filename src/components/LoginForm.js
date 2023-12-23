@@ -1,37 +1,40 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import fav from "../assets/images/fav.svg";
 import axios from "axios";
-import generateRandomNumbers from "./../util/generateRandomNumber";
-import { setIsAuth } from "../redux/slices/authSlice";
-
-
+import generateRandomNumber from "./../util/generateRandomNumber";
 
 const LoginForm = () => {
-  const [formData, setFormData] = useState({ otp: generateRandomNumbers() });
-  let headersList = {
+  const [formData, setFormData] = useState({
+    otp: generateRandomNumber(),
+    email: "",
+  });
+  const [loading, setLoading] = useState(false);
+  const headersList = {
     Accept: "application/json",
-    "Content-Type": "application/x-www-form-urlencoded"
+    "Content-Type": "application/x-www-form-urlencoded",
   };
-  let requestOptions = {
+  const requestOptions = {
     method: "POST",
     url: "http://nuaris-app.me-south-1.elasticbeanstalk.com/users/send-otp/",
     headers: headersList,
-    requestBody: formData
+    data: formData,
   };
-  const handleSubmit = async e => {
+  const handleSubmit = async (e) => {
+    setLoading(true);
     e.preventDefault();
-    axios
+    await axios
       .request(requestOptions)
       .then(() => {
         console.log("otp sennt");
       })
-      .catch(err => {
-        console.error(err);
-      });
+      .catch((err) => {
+        console.error("Error logging in: ", err);
+      })
+      .finally(() => setLoading(false));
   };
 
   return (
-    <React.Fragment>
+    <>
       <form onSubmit={handleSubmit}>
         <div className="head">
           <img src={fav} alt="logoFav" loading="lazy" />
@@ -48,15 +51,21 @@ const LoginForm = () => {
               id="email"
               name="email"
               placeholder="Enter your email address"
-              onChange={e =>
-                setFormData({ ...formData, email: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, email: e.target.value })
+              }
             />
           </div>
         </div>
-        <button type="submit">Login</button>
-
+        <button
+          style={{ opacity: loading ? 0.7 : 1 }}
+          disabled={loading}
+          type="submit"
+        >
+          {loading ? "Logging in..." : "Login"}
+        </button>
       </form>
-    </React.Fragment>
+    </>
   );
 };
 
