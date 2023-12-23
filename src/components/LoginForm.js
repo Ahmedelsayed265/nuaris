@@ -1,6 +1,6 @@
 import { useState } from "react";
 import fav from "../assets/images/fav.svg";
-import axios from "axios";
+import axios from "../util/axios";
 import generateRandomNumber from "./../util/generateRandomNumber";
 
 const LoginForm = () => {
@@ -15,7 +15,7 @@ const LoginForm = () => {
   };
   const requestOptions = {
     method: "POST",
-    url: "http://nuaris-app.me-south-1.elasticbeanstalk.com/users/send-otp/",
+    url: "/users/send-otp/",
     headers: headersList,
     data: formData,
   };
