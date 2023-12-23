@@ -1,0 +1,234 @@
+// out fit font
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+// Mirande
+@font-face {
+  font-family: "mirande";
+  src: url("../webfonts/Mirande.ttf");
+}
+@mixin centerFlex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@mixin centerAbsolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@mixin clearInput {
+  border: none;
+  background: none;
+  outline: none;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  line-height: 36px;
+  scroll-behavior: smooth;
+  font-family: 'Outfit', sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+body {
+  position: relative;
+  overflow-x: hidden;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background: #eee;
+  height: 300px;
+}
+
+$main: #005a64;
+$border: #dddddd;
+$text: #637381;
+$white: #fff;
+$transation: .4s ease-in-out;
+
+.auth_section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  .videoWrappper {
+    width: 50%;
+    position: relative;
+    &::after {
+      position: absolute;
+      content: '';
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to top, #00698077, #80b4bf75);
+      z-index: 1;
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+    .logo {
+      @include centerAbsolute();
+      z-index: 9;
+      img {
+        height: 200px;
+        filter: brightness(0) invert(1);
+      }
+    }
+  }
+  .auth-form {
+    width: 50%;
+    form {
+      width: min(100% - 48px, 480px);
+      @include centerFlex();
+      gap: 22px;
+      height: 100%;
+      margin: 0 auto;
+      flex-direction: column;
+      .head {
+        @include centerFlex();
+        flex-direction: column;
+        gap: 8px;
+        img {
+          height: 56px;
+        }
+        h1 {
+          font-size: 32px;
+          color: $main;
+        }
+        p {
+          text-align: center;
+          font-size: 16px;
+          color: $text;
+          line-height: 20px;
+          span {
+            font-weight: 600;
+          }
+        }
+      }
+      .form_group {
+        width: 100%;
+        margin-top: 16px;
+        gap: 24px;
+        display: flex;
+        flex-direction: column;
+        .input_field {
+          display: flex;
+          flex-direction: column;
+          input {
+            height: 56px;
+            padding: 10px;
+            background: none;
+            outline: none;
+            border: 1px solid $border;
+            transition: $transation;
+            border-radius: 4px;
+            &:focus {
+              border-color: $main;
+            }
+          }
+          label {
+            font-size: 14px;
+            color: $text;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            a {
+              color: $main;
+            }
+          }
+          .check {
+            display: flex;
+            align-items: center;
+            margin-top: 16px;
+            gap: 6px;
+            input {
+              width: 16px;
+              height: 16px;
+              appearance: none;
+              position: relative;
+              border: none;
+              &::after {
+                min-width: 18px;
+                height: 18px;
+                content: '';
+                border-radius: 50%;
+                border: 1px solid $border;
+                position: absolute;
+                cursor: pointer;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-family: "Font Awesome 6 pro";
+                display: flex;
+                align-items: center;
+                font-size: 12px;
+                justify-content: center;
+                padding-top: 2px;
+              }
+              &:checked:after {
+                content: '\f00c';
+                background: $main;
+                color: #fff;
+                border: 0;
+              }
+            }
+          }
+        }
+      }
+      button {
+        width: 100%;
+        height: 50px;
+        border-radius: 6px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        color: #fff;
+        font-size: 16px;
+        background: $main;
+        font-weight: 400;
+      }
+    }
+  }
+}
+.otp-container {
+  width: 100%;
+  @include space-between();
+  flex-wrap: wrap;
+  padding: 16px 0;
+  .otp-input {
+    border-radius: 4px;
+    width: 70px;
+    height: 60px;
+    text-align: center;
+    border: 1px solid $border;
+    font-size: 24px;
+    font-weight: 800;
+    color: $main;
+    outline: none;
+    &::-webkit-inner-spin-button {
+      display: none;
+    }
+  }
+}
