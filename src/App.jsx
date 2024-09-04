@@ -16,14 +16,7 @@ export default function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/employee-join" element={<EmployeeJoin />} />
-        <Route
-          path="/dashboard/*"
-          element={
-            <AuthProvider>
-              <Dashboard />
-            </AuthProvider>
-          }
-        />
+        <Route path="/dashboard/*" element={<Dashboard />} />
         <Route path="*" element={<>404 page not found</>} />
       </Routes>
     </div>
