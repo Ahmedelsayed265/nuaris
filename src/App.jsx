@@ -3,7 +3,7 @@ import Home from "./routes/Home";
 import Login from "./routes/Login";
 // import Register from "./routes/Register";
 // import ResetPassword from "./routes/ResetPassword";
-// import Dashboard from "./routes/Dashboard";
+import Dashboard from "./routes/Dashboard";
 // import EmployeeJoin from "./routes/EmployeeJoin";
 
 export default function App() {
