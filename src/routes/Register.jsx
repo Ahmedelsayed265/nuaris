@@ -13,6 +13,7 @@ export default function Register() {
   const [title, setTitle] = useState("");
   const [showOtpForm, setShowOtpForm] = useState(false);
   const [showRegisterForm, setShowRegisterForm] = useState(false);
+
   const [formData, setFormData] = useState({
     role: formSelecton,
     logo: "",
@@ -82,14 +83,14 @@ export default function Register() {
               setShowRegisterForm={setShowRegisterForm}
             />
           )}
-          {showRegisterForm && !showOtpForm && formSelecton === "host" && (
+          {/* {showRegisterForm && !showOtpForm && formSelecton === "host" && (
             <HostForm
               formData={formData}
               setFormData={setFormData}
               setShowOtpForm={setShowOtpForm}
               setShowRegisterForm={setShowRegisterForm}
             />
-          )}
+          )} */}
           {showRegisterForm && !showOtpForm && formSelecton === "agent" && (
             <AgentForm
               formData={formData}
@@ -98,7 +99,7 @@ export default function Register() {
               setShowRegisterForm={setShowRegisterForm}
             />
           )}
-          {showRegisterForm &&
+          {/* {showRegisterForm &&
             !showOtpForm &&
             formSelecton === "service provider" && (
               <ServiceProviderForm
@@ -107,7 +108,7 @@ export default function Register() {
                 setShowOtpForm={setShowOtpForm}
                 setShowRegisterForm={setShowRegisterForm}
               />
-            )}
+            )} */}
           {showOtpForm && (
             <OtpForm email={formData.email} setShowOtpForm={setShowOtpForm} />
           )}
