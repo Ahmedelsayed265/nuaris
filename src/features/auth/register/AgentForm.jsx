@@ -2,7 +2,6 @@ import {
   handleChange,
   handlePhoneChange,
   handleSelectCountry,
-  fetchCitiesForCountry,
   checkPasswordStrength,
   filterEmptyKeys,
 } from "../../../utils/helper";
@@ -30,9 +29,9 @@ export default function AgentForm({
   const [fileLoading, setFileLoading] = useState(false);
   const [cityNameList, setCityNameList] = useState(null);
 
-  useEffect(() => {
-    fetchCitiesForCountry(formData.country, setCityList, setCityNameList);
-  }, [formData.country]);
+  // useEffect(() => {
+  //   fetchCitiesForCountry(formData.country, setCityList, setCityNameList);
+  // }, [formData.country]);
 
   const handleSelectCity = (cityName) => {
     const selectedCity = cityList?.find((city) => city.name === cityName);

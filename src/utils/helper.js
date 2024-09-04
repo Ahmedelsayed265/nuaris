@@ -35,6 +35,7 @@ export const checkPasswordStrength = (password) => {
   return hasMinLength && hasLetters && hasNumbers && hasSymbols;
 };
 
+
 export const handleSelectCountry = (countryCode, setFormData) => {
   setFormData((prev) => ({
     ...prev,
@@ -42,22 +43,22 @@ export const handleSelectCountry = (countryCode, setFormData) => {
   }));
 };
 
-export const fetchCitiesForCountry = (
-  countryCode,
-  setCityList,
-  setCityNameList
-) => {
-  const citiesArray = City.getCitiesOfCountry(countryCode);
-  const uniqueCities = citiesArray.reduce((acc, city) => {
-    if (!acc.some((existingCity) => existingCity.name === city.name)) {
-      acc.push(city);
-    }
-    return acc;
-  }, []);
-  const citiesNames = uniqueCities?.map((city) => city.name);
-  setCityList(uniqueCities);
-  setCityNameList(citiesNames);
-};
+// export const fetchCitiesForCountry = (
+//   countryCode,
+//   setCityList,
+//   setCityNameList
+// ) => {
+//   const citiesArray = City.getCitiesOfCountry(countryCode);
+//   const uniqueCities = citiesArray.reduce((acc, city) => {
+//     if (!acc.some((existingCity) => existingCity.name === city.name)) {
+//       acc.push(city);
+//     }
+//     return acc;
+//   }, []);
+//   const citiesNames = uniqueCities?.map((city) => city.name);
+//   setCityList(uniqueCities);
+//   setCityNameList(citiesNames);
+// };
 
 export const handleSelectCity = (
   cityName,
