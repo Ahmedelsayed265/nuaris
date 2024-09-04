@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import UserTypeSelection from "../features/auth/register/UserTypeSelection";
-// import HostForm from "./../features/auth/register/HostForm";
+import HostForm from "./../features/auth/register/HostForm";
 import AgentForm from "../features/auth/register/AgentForm";
-// import ServiceProviderForm from "../features/auth/register/ServiceProviderForm";
+import ServiceProviderForm from "../features/auth/register/ServiceProviderForm";
 import OtpForm from "../features/auth/register/OtpForm";
 import regiesterImage from "../assets/images/regiester-image.jpeg";
 import logoH from "../assets/images/logoH.svg";
@@ -13,7 +13,6 @@ export default function Register() {
   const [title, setTitle] = useState("");
   const [showOtpForm, setShowOtpForm] = useState(false);
   const [showRegisterForm, setShowRegisterForm] = useState(false);
-
   const [formData, setFormData] = useState({
     role: formSelecton,
     logo: "",
@@ -83,14 +82,14 @@ export default function Register() {
               setShowRegisterForm={setShowRegisterForm}
             />
           )}
-          {/* {showRegisterForm && !showOtpForm && formSelecton === "host" && (
+          {showRegisterForm && !showOtpForm && formSelecton === "host" && (
             <HostForm
               formData={formData}
               setFormData={setFormData}
               setShowOtpForm={setShowOtpForm}
               setShowRegisterForm={setShowRegisterForm}
             />
-          )} */}
+          )}
           {showRegisterForm && !showOtpForm && formSelecton === "agent" && (
             <AgentForm
               formData={formData}
@@ -99,7 +98,7 @@ export default function Register() {
               setShowRegisterForm={setShowRegisterForm}
             />
           )}
-          {/* {showRegisterForm &&
+          {showRegisterForm &&
             !showOtpForm &&
             formSelecton === "service provider" && (
               <ServiceProviderForm
@@ -108,7 +107,7 @@ export default function Register() {
                 setShowOtpForm={setShowOtpForm}
                 setShowRegisterForm={setShowRegisterForm}
               />
-            )} */}
+            )}
           {showOtpForm && (
             <OtpForm email={formData.email} setShowOtpForm={setShowOtpForm} />
           )}

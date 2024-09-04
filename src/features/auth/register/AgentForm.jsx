@@ -4,6 +4,7 @@ import {
   handleSelectCountry,
   checkPasswordStrength,
   filterEmptyKeys,
+  handleFileUpload
 } from "../../../utils/helper";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
@@ -15,7 +16,7 @@ import PhoneField from "../../../ui/form-elements/PhoneField";
 import PasswordField from "../../../ui/form-elements/PasswordField";
 import SelectField from "../../../ui/form-elements/SelectField";
 import ReactFlagsSelect from "react-flags-select";
-// import MediaUploadField from "../../../ui/form-elements/MediaUploadField";
+import MediaUploadField from "../../../ui/form-elements/MediaUploadField";
 import axiosInstance from "../../../utils/axiosInstance";
 
 export default function AgentForm({
@@ -90,7 +91,7 @@ export default function AgentForm({
             onChange={(e) => handleChange(e, setFormData)}
           />
         </div>
-        {/* <div className="col-lg-6 col-12 p-2">
+        <div className="col-lg-6 col-12 p-2">
           <MediaUploadField
             label="Upload Your Logo"
             hint="(PNG or JPG)"
@@ -111,7 +112,7 @@ export default function AgentForm({
               )
             }
           />
-        </div> */}
+        </div>
         <div className="col-lg-6 col-12 p-2">
           <InputField
             label="Email Address"

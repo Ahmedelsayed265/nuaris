@@ -42,7 +42,6 @@ export default function MediaUploadField({
                 throw new Error(`HTTP error! status: ${response.status}`);
               }
               const blob = await response.blob();
-              
               const mimeType = source.endsWith(".png")
                 ? "image/png"
                 : source.endsWith(".jpg") || source.endsWith(".jpeg")
@@ -64,7 +63,6 @@ export default function MediaUploadField({
         labelIdle={labelIdle}
         stylePanelAspectRatio={pannelRatio}
         onupdatefiles={(fileItems) => {
-          if (fileItems.length === 0) return;
           if (typeof fileItems[0]?.source === "object" || !fileItems[0]) {
             handleFileUpload(fileItems);
           } else {

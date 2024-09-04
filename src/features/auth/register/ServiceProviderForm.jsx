@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import {
   checkPasswordStrength,
-  fetchCitiesForCountry,
+
   filterEmptyKeys,
   handleChange,
-
+  handleFileUpload,
   handlePhoneChange,
   handleSelectCity,
   handleSelectCountry
@@ -20,7 +20,7 @@ import PhoneField from "../../../ui/form-elements/PhoneField";
 import SubmitButton from "../../../ui/form-elements/SubmitButton";
 import MapModal from "../../../ui/modals/MapModal";
 import SelectField from "../../../ui/form-elements/SelectField";
-// import MediaUploadField from "../../../ui/form-elements/MediaUploadField";
+import MediaUploadField from "../../../ui/form-elements/MediaUploadField";
 import axiosInstance from "../../../utils/axiosInstance";
 
 export default function ServiceProviderForm({
@@ -47,9 +47,9 @@ export default function ServiceProviderForm({
     }
   }, [searchedPlace, setFormData]);
 
-  useEffect(() => {
-    fetchCitiesForCountry(formData.country, setCityList, setCityNameList);
-  }, [formData.country]);
+  // useEffect(() => {
+  //   fetchCitiesForCountry(formData.country, setCityList, setCityNameList);
+  // }, [formData.country]);
 
   const handleProductsChange = (e) => {
     setCheckedProducts(e.target.checked);
@@ -124,7 +124,7 @@ export default function ServiceProviderForm({
             onChange={(e) => handleChange(e, setFormData)}
           />
         </div>
-        {/* <div className="col-lg-6 col-12 p-2">
+        <div className="col-lg-6 col-12 p-2">
           <MediaUploadField
             label="Upload Your Logo"
             hint="(PNG or JPG)"
@@ -145,7 +145,7 @@ export default function ServiceProviderForm({
               )
             }
           />
-        </div> */}
+        </div>
         <div className="col-lg-6 col-12 p-2">
           <InputField
             label="Email Address"

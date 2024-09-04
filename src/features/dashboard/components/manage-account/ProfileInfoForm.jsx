@@ -1,5 +1,4 @@
 import {
-  fetchCitiesForCountry,
   filterEmptyKeys,
   formatNumber,
   handleChange,
@@ -57,9 +56,9 @@ const ProfileInfoForm = () => {
     setSearchedPlace(user.location_on_map || "search on map");
   }, [user]);
 
-  useEffect(() => {
-    fetchCitiesForCountry(formData.country, setCityList, setCityNameList);
-  }, [formData.country]);
+  // useEffect(() => {
+  //   fetchCitiesForCountry(formData.country, setCityList, setCityNameList);
+  // }, [formData.country]);
 
   useEffect(() => {
     if (searchedPlace !== "search on map") {

@@ -3,12 +3,11 @@ import {
   handlePhoneChange,
   handleSelectCity,
   handleSelectCountry,
-  fetchCitiesForCountry,
   checkPasswordStrength,
   filterEmptyKeys,
   formatNumber,
   stripSpaces,
-
+  handleFileUpload
 } from "../../../utils/helper";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
@@ -22,7 +21,7 @@ import SelectField from "./../../../ui/form-elements/SelectField";
 import MapLocationField from "../../../ui/form-elements/MapLocationField";
 import MapModal from "../../../ui/modals/MapModal";
 import ReactFlagsSelect from "react-flags-select";
-// import MediaUploadField from "../../../ui/form-elements/MediaUploadField";
+import MediaUploadField from "../../../ui/form-elements/MediaUploadField";
 import axiosInstance from "../../../utils/axiosInstance";
 
 export default function HostForm({
@@ -47,9 +46,9 @@ export default function HostForm({
     }
   }, [searchedPlace, setFormData]);
 
-  useEffect(() => {
-    fetchCitiesForCountry(formData.country, setCityList, setCityNameList);
-  }, [formData.country]);
+  // useEffect(() => {
+  //   fetchCitiesForCountry(formData.country, setCityList, setCityNameList);
+  // }, [formData.country]);
 
   const handleSubmit = async (e) => {
     setLoading(true);
@@ -110,7 +109,7 @@ export default function HostForm({
             onChange={(e) => handleChange(e, setFormData)}
           />
         </div>
-        {/* <div className="col-lg-6 col-12 p-2">
+        <div className="col-lg-6 col-12 p-2">
           <MediaUploadField
             label="Upload Your Logo"
             hint="(PNG or JPG)"
@@ -132,7 +131,7 @@ export default function HostForm({
               )
             }
           />
-        </div> */}
+        </div>
         <div className="col-lg-6 col-12 p-2">
           <InputField
             label="Email Address"

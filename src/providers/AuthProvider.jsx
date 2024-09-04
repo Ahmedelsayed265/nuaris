@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setToken } from "../redux/slices/authedUser";
 import { useNavigate } from "react-router-dom";
@@ -16,7 +16,7 @@ export default function AuthProvider({ children }) {
     }
   }, [accessToken]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!accessToken) {
       axiosInstance
         .post("/api/v1/web_refresh")
@@ -42,7 +42,7 @@ export default function AuthProvider({ children }) {
     }
   }, [accessToken, dispatch, navigate]);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const requestInterceptor = axiosInstance.interceptors.request.use(
       (config) => {
         if (accessToken) {

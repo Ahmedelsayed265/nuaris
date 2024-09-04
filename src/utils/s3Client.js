@@ -14,6 +14,10 @@ export const s3Client = new S3Client({
 });
 
 export const multipartUploadFile = async (file, name, folderName) => {
+
+  console.log(file, name, folderName);
+  
+
   const fileExtention = name.substring(name.lastIndexOf(".") + 1);
   const uniqueName = `${uuidv4()}.${fileExtention}`;
   const params = {

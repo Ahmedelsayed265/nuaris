@@ -35,7 +35,6 @@ export const checkPasswordStrength = (password) => {
   return hasMinLength && hasLetters && hasNumbers && hasSymbols;
 };
 
-
 export const handleSelectCountry = (countryCode, setFormData) => {
   setFormData((prev) => ({
     ...prev,
@@ -96,7 +95,6 @@ export const handleFileUpload = async (
   setFileLoading,
   fileLoading
 ) => {
-  
   if (fileLoading) {
     return;
   }
