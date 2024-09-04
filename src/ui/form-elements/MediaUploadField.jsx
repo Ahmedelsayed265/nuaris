@@ -63,6 +63,7 @@ export default function MediaUploadField({
         labelIdle={labelIdle}
         stylePanelAspectRatio={pannelRatio}
         onupdatefiles={(fileItems) => {
+          if (fileItems.length === 0) return;
           if (typeof fileItems[0]?.source === "object" || !fileItems[0]) {
             handleFileUpload(fileItems);
           } else {
