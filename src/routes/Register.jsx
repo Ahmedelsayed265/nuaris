@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import UserTypeSelection from "../features/auth/register/UserTypeSelection";
-import HostForm from "./../features/auth/register/HostForm";
+// import HostForm from "./../features/auth/register/HostForm";
 import AgentForm from "../features/auth/register/AgentForm";
-import ServiceProviderForm from "../features/auth/register/ServiceProviderForm";
+// import ServiceProviderForm from "../features/auth/register/ServiceProviderForm";
 import OtpForm from "../features/auth/register/OtpForm";
 import regiesterImage from "../assets/images/regiester-image.jpeg";
 import logoH from "../assets/images/logoH.svg";
