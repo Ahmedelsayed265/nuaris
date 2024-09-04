@@ -4,7 +4,7 @@ import {
   fetchCitiesForCountry,
   filterEmptyKeys,
   handleChange,
-  handleFileUpload,
+
   handlePhoneChange,
   handleSelectCity,
   handleSelectCountry

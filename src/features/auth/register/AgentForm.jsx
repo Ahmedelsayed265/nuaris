@@ -5,7 +5,6 @@ import {
   fetchCitiesForCountry,
   checkPasswordStrength,
   filterEmptyKeys,
-  handleFileUpload
 } from "../../../utils/helper";
 import { toast } from "react-toastify";
 import { useEffect, useState } from "react";
