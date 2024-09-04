@@ -42,6 +42,7 @@ export default function MediaUploadField({
                 throw new Error(`HTTP error! status: ${response.status}`);
               }
               const blob = await response.blob();
+              
               const mimeType = source.endsWith(".png")
                 ? "image/png"
                 : source.endsWith(".jpg") || source.endsWith(".jpeg")

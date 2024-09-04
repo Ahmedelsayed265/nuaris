@@ -92,7 +92,7 @@ export default function AgentForm({
             onChange={(e) => handleChange(e, setFormData)}
           />
         </div>
-        <div className="col-lg-6 col-12 p-2">
+        {/* <div className="col-lg-6 col-12 p-2">
           <MediaUploadField
             label="Upload Your Logo"
             hint="(PNG or JPG)"
@@ -113,7 +113,7 @@ export default function AgentForm({
               )
             }
           />
-        </div>
+        </div> */}
         <div className="col-lg-6 col-12 p-2">
           <InputField
             label="Email Address"
