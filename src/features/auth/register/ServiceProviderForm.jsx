@@ -20,7 +20,7 @@ import PhoneField from "../../../ui/form-elements/PhoneField";
 import SubmitButton from "../../../ui/form-elements/SubmitButton";
 import MapModal from "../../../ui/modals/MapModal";
 import SelectField from "../../../ui/form-elements/SelectField";
-import MediaUploadField from "../../../ui/form-elements/MediaUploadField";
+// import MediaUploadField from "../../../ui/form-elements/MediaUploadField";
 import axiosInstance from "../../../utils/axiosInstance";
 
 export default function ServiceProviderForm({

@@ -22,7 +22,7 @@ import SelectField from "./../../../ui/form-elements/SelectField";
 import MapLocationField from "../../../ui/form-elements/MapLocationField";
 import MapModal from "../../../ui/modals/MapModal";
 import ReactFlagsSelect from "react-flags-select";
-import MediaUploadField from "../../../ui/form-elements/MediaUploadField";
+// import MediaUploadField from "../../../ui/form-elements/MediaUploadField";
 import axiosInstance from "../../../utils/axiosInstance";
 
 export default function HostForm({

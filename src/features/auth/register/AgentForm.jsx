@@ -17,7 +17,7 @@ import PhoneField from "../../../ui/form-elements/PhoneField";
 import PasswordField from "../../../ui/form-elements/PasswordField";
 import SelectField from "../../../ui/form-elements/SelectField";
 import ReactFlagsSelect from "react-flags-select";
-import MediaUploadField from "../../../ui/form-elements/MediaUploadField";
+// import MediaUploadField from "../../../ui/form-elements/MediaUploadField";
 import axiosInstance from "../../../utils/axiosInstance";
 
 export default function AgentForm({
